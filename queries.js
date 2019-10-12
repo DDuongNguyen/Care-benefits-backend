@@ -7,26 +7,27 @@ const pool = new Pool({
   port: 5432,
 })
 
-/*CREATE TABLE daycares(
+/*
+CREATE TABLE daycares(
     ID SERIAL PRIMARY KEY,
     RATING INT,
     CAPACIY INT,
     INSURANCE TEXT,
     PHOTOS TEXT,
     COST TEXT,
-    NAME TEXT,
     PHONE TEXT,
     LANGUAGES TEXT,
-    HOURS BOOLEAN,
     LICENSED BOOLEAN,
-    DESCRIPTION BOOLEAN,
     DOCTOR_RATE BOOLEAN,
     CA BOOLEAN,
     TA BOOLEAN,
     MA BOOLEAN,
     LPN BOOLEAN,
     RN BOOLEAN,
-    PA BOOLEAN
+    PA BOOLEAN,
+    HOURS VARCHAR(20),
+    NAME VARCHAR(30),
+    DESCRIPTION VARCHAR(30)
 );
 
 INSERT INTO daycares (RATING, CAPACIY, INSURANCE, PHOTOS, COST, PHONE, LANGUAGES, LICENSED, DOCTOR_RATE,
@@ -46,12 +47,18 @@ CREATE TABLE APPOINTMENT(
     ALLERGIES VARCHAR(30),
     SYMPTOMS VARCHAR(30),
     MEDICATION VARCHAR(30),
-    EXTRA_COMMENTS VARCHAR(50)
+    EXTRA_COMMENTS VARCHAR(50),
+    DAYCARE VARCHAR(30)
 )
 
 INSERT INTO APPOINTMENT (day, time, discount, name, age, language, allergies, SYMPTOMS, MEDICATION, EXTRA_COMMENTS, DAYCARE) VALUES
     ('10/12/2019', '9 am', '10', 'Jane Doe', '5', 'ENG', 'PEANUT', 'COLD, FLU', 'Lorum Ipsum' , 'Lorum Ipsum' , 'Purple Rain Daycare'),
     ('10/12/2019', '10 am', '10', 'Jane Doe', '5', 'ENG', 'PEANUT', 'COLD, FLU', 'Lorum Ipsum' , 'Lorum Ipsum' , 'Richmond Daycare');
-*/
 
+CREATE TABLE USERS(
+ID Serial primary key,
+ name varchar(30),
+email varchar(40)
+);
 
+INSERT INTO users (name,email) VALUES ('Jerry', 'jerry@example.com'), ('George', 'geroge@example.com')

@@ -1,13 +1,14 @@
 const express = require('express')
 const app = express()
-const port = 3000
+const port = 3001
+var cors = require('cors');
 
 const Pool = require('pg').Pool
 const pool = new Pool({
   user: 'postgres',
   host: 'localhost',
-  database: 'testdb',
-  password: 'admin',
+  database: 'daycare',
+  // password: 'admin',
   port: 5432,
 })
 
@@ -39,7 +40,7 @@ const getAppointments = (request, response) => {
     })
   }
 
-
+app.use(cors());
 app.get('/users', getUsers)
 app.get('/daycare', getDaycare)
 app.get('/appointments', getAppointments)
